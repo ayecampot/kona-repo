@@ -1,0 +1,207 @@
+.titulo {
+  color: #8A413F;
+  font-family: "Roboto", sans-serif, sans-serif;
+  line-height: 2;
+  font-size: 170%; }
+
+.parrafo {
+  text-align: justify;
+  color: grey;
+  font-family: "Roboto", sans-serif, sans-serif;
+  line-height: 1.5; }
+
+.menu {
+  background-color: #6d8c9a;
+  min-height: 50px; }
+  .menu .navbar-brand:hover {
+    filter: opacity(0.5); }
+  .menu .nav-link {
+    color: #fff !important;
+    padding: 15px !important;
+    font-size: 13px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 20px; }
+    .menu .nav-link:hover {
+      color: #90bccf !important; }
+  .menu .navbar-toggler-icon {
+    background-color: none; }
+    .menu .navbar-toggler-icon .navbar-toggler {
+      border: none;
+      margin-right: 30px; }
+
+#banner {
+  background-image: url(../imagenes/mujerlectora6.jpg);
+  background-size: cover;
+  padding-top: 40px;
+  min-height: 350px;
+  color: #fff;
+  animation: aparecer 1s ease-in-out; }
+  #banner .banner__texto {
+    margin: 0 auto 80px auto;
+    text-align: center;
+    margin-top: 60px; }
+    #banner .banner__texto strong {
+      font-size: 300%; }
+
+#inicio {
+  padding-top: 80px;
+  margin-bottom: 90px;
+  animation: aparecer 1s ease-in-out; }
+
+@keyframes aparecer {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+  #inicio img {
+    margin-top: 20px; }
+
+#nosotros {
+  margin-top: 100px;
+  animation: aparecer 1s ease-in-out; }
+  #nosotros img {
+    margin-bottom: 20px;
+    margin-right: 40px; }
+
+@keyframes aparecer {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+#servicios {
+  margin: 40px;
+  margin-top: 40px; }
+  #servicios .card-body {
+    background-color: #6d8c9a !important; }
+    #servicios .card-body h3 {
+      color: #fff;
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      font-size: 120%; }
+    #servicios .card-body h2 {
+      color: #fff;
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      font-size: 150%; }
+    #servicios .card-body p {
+      color: #fff;
+      text-align: center;
+      font-family: "Roboto", sans-serif; }
+
+#libros {
+  margin-bottom: 80px;
+  margin-top: 70px; }
+  #libros h3 {
+    color: #8A413F;
+    font-family: "Roboto", sans-serif, sans-serif;
+    line-height: 2; }
+
+#carousel-libros {
+  margin-left: 25px; }
+
+.faq {
+  background-image: url(../imagenes/mujerlectora2.jpg);
+  padding-top: 100px; }
+  .faq li {
+    padding: 20px;
+    list-style-position: outside;
+    text-align: justify;
+    animation: aparecer 1s ease-in-out; }
+  .faq p {
+    color: #444242;
+    font-family: "Roboto", sans-serif; }
+  .faq h3 {
+    color: #8A413F;
+    font-family: "Roboto", sans-serif, sans-serif;
+    line-height: 2;
+    margin-left: 60px;
+    animation: aparecer 1s ease-in-out; }
+
+#contacto {
+  animation: aparecer 1s ease-in-out;
+  padding-bottom: 20px;
+  padding-top: 50px;
+  background-color: #90bccf; }
+  #contacto h2 {
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    font-size: 170%; }
+
+.contactoForm select:focus, input:focus, input[type]:focus {
+  border-color: #6d8c9a;
+  box-shadow: 0 1px 1px #6d8c9a inset, 0 0 8px #6d8c9a;
+  outline: 0 none; }
+
+.contactoForm button {
+  background-color: #6d8c9a;
+  border-color: #6d8c9a;
+  color: #FFF;
+  margin-left: 10px;
+  justify-content: center;
+  margin-bottom: 20px; }
+
+.contactoForm button:focus, button:active, button:hover {
+  background-color: #90bccf;
+  border-color: #90bccf;
+  box-shadow: 0 1px 1px #6d8c9a inset, 0 0 8px #6d8c9a;
+  color: #FFF !important; }
+
+footer {
+  width: 100%;
+  background: #6d8c9a;
+  height: 100px;
+  margin-top: 0px;
+  display: flex;
+  justify-content: center; }
+
+.anchoFooter {
+  margin-top: 10px; }
+  .anchoFooter p {
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    padding-left: 30px;
+    font-size: 75%;
+    line-height: 2; }
+  .anchoFooter a:hover {
+    filter: opacity(0.5); }
+
+.simplescrollup__button {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  transition: 1s all;
+  z-index: 10000; }
+
+.simplescrollup__button--show {
+  transform: translateX(0); }
+
+.simplescrollup__button--hide {
+  transform: translateX(100px); }
+
+@media (max-width: 375px) {
+  .navbar-toggler {
+    margin-right: 0px; }
+  .navbar-brand {
+    margin-right: 0px; }
+  #inicio {
+    padding: 30px 20px 0px 20px; }
+  #libros {
+    padding: 30px 20px 0px 20px; }
+  #carousel-libros {
+    padding: 0px 20px 0px 20px; }
+  #banner .banner__texto {
+    margin: 0 auto 80px auto;
+    text-align: center;
+    margin-top: 10px; } }
+
+@media (min-width: 376px) and (max-width: 575.98px) {
+  .navbar-toggler {
+    margin-right: 10px; }
+  #banner .banner__texto {
+    margin: 0 auto 80px auto;
+    text-align: center;
+    margin-top: 10px; } }
