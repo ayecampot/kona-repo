@@ -204,4 +204,12 @@ footer {
   #banner .banner__texto {
     margin: 0 auto 80px auto;
     text-align: center;
-    margin-top: 10px; } }
+    margin-top: 10px; }
+  #inicio {
+    padding-top: 30px; }
+  .banner__texto {
+    margin: 0 auto 80px auto;
+    text-align: center; }
+    .banner__texto h1 {
+      font-size: 300%;
+      margin-top: 30px; } }

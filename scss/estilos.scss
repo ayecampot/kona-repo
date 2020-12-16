@@ -116,7 +116,7 @@ $font:'Roboto', sans-serif;
 
 }
 
-// NOSOTROS / ¿Qué es? ---> Así está en la web
+// NOSOTROS / 
 
 #nosotros {
     margin-top: 100px;
@@ -331,12 +331,28 @@ footer {
     .navbar-toggler {
         margin-right: 10px;
     }
+
     #banner{
 	      .banner__texto {
 	        margin: 0 auto 80px auto;
 	        text-align: center;
 	        margin-top: 10px;
 	    }
+    }
+
+
+    #inicio {
+        padding-top: 30px; 
+    }
+
+    .banner__texto {
+        margin: 0 auto 80px auto;
+        text-align: center;
+
+        h1 {
+            font-size: 300%;
+            margin-top: 30px;
+        }
     }
 }
 
