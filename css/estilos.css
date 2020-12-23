@@ -32,6 +32,12 @@
       border: none;
       margin-right: 30px; }
 
+.menu-abv {
+  background-color: transparent; }
+
+.menu-blw {
+  background-color: #6d8c9a; }
+
 #banner {
   background-image: url(../imagenes/mujerlectora6.jpg);
   background-size: cover;
@@ -46,9 +52,11 @@
     #banner .banner__texto strong {
       font-size: 300%; }
 
+.section-beacon {
+  height: 71px; }
+
 #inicio {
   padding-top: 80px;
-  margin-bottom: 90px;
   animation: aparecer 1s ease-in-out; }
 
 @keyframes aparecer {
@@ -73,8 +81,7 @@
     opacity: 1; } }
 
 #servicios {
-  margin: 40px;
-  margin-top: 40px; }
+  margin: 0px 40px 0px 40px; }
   #servicios .card-body {
     background-color: #6d8c9a !important; }
     #servicios .card-body h3 {
@@ -93,8 +100,7 @@
       font-family: "Roboto", sans-serif; }
 
 #libros {
-  margin-bottom: 80px;
-  margin-top: 70px; }
+  margin-bottom: 80px; }
   #libros h3 {
     color: #8A413F;
     font-family: "Roboto", sans-serif, sans-serif;
@@ -131,7 +137,9 @@
     color: #fff;
     font-size: 170%; }
 
-.contactoForm select:focus, input:focus, input[type]:focus {
+.contactoForm select:focus,
+input:focus,
+input[type]:focus {
   border-color: #6d8c9a;
   box-shadow: 0 1px 1px #6d8c9a inset, 0 0 8px #6d8c9a;
   outline: 0 none; }
@@ -144,7 +152,9 @@
   justify-content: center;
   margin-bottom: 20px; }
 
-.contactoForm button:focus, button:active, button:hover {
+.contactoForm button:focus,
+button:active,
+button:hover {
   background-color: #90bccf;
   border-color: #90bccf;
   box-shadow: 0 1px 1px #6d8c9a inset, 0 0 8px #6d8c9a;

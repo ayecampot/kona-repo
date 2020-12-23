@@ -4,22 +4,23 @@ $color-titulos: #8A413F;
 
 $color-backround:#6d8c9a;
 
-$font:'Roboto', sans-serif;
+$font:'Roboto',
+sans-serif;
 
-@mixin titulos { 
-	color: $color-titulos;
+@mixin titulos {
+    color: $color-titulos;
     font-family: $font, sans-serif;
     line-height: 2;
- }
+}
 
- @mixin cardsTexto {
- 	color: #fff;
+@mixin cardsTexto {
+    color: #fff;
     text-align: center;
     font-family: $font;
-} 
+}
 
 .titulo {
-   @include titulos;
+    @include titulos;
     font-size: 170%;
 }
 
@@ -32,16 +33,13 @@ $font:'Roboto', sans-serif;
 }
 
 // ESTO ES EL MENU
-
 .menu {
-
     background-color: $color-backround;
     min-height: 50px;
 
     .navbar-brand:hover {
         filter: opacity(.5);
     }
-
 
     .nav-link {
         color: #fff !important;
@@ -52,20 +50,29 @@ $font:'Roboto', sans-serif;
         font-weight: 600;
         letter-spacing: 1px;
         padding: 20px;
-        &:hover{
-        color: #90bccf !important;
-        } 
-        
+
+        &:hover {
+            color: #90bccf !important;
+        }
+
     }
 
     .navbar-toggler-icon {
-    background-color: none;
-    
+        background-color: none;
+
         .navbar-toggler {
-        border: none;
-        margin-right: 30px;
+            border: none;
+            margin-right: 30px;
         }
-    } 
+    }
+}
+
+.menu-abv {
+    background-color: transparent;
+}
+
+.menu-blw {
+    background-color: $color-backround;
 }
 
 
@@ -87,16 +94,19 @@ $font:'Roboto', sans-serif;
 
         strong {
             font-size: 300%;
-          
+
         }
     }
+}
+
+.section-beacon {
+    height: 71px;
 }
 
 // INICIO
 
 #inicio {
     padding-top: 80px;
-    margin-bottom: 90px;
     animation: aparecer 1s ease-in-out;
 
 
@@ -143,26 +153,23 @@ $font:'Roboto', sans-serif;
 // SERVICIOS_CARDS
 
 #servicios {
-    margin: 40px;
-    margin-top: 40px;
-
+    margin: 0px 40px 0px 40px;
 
     .card-body {
         background-color: $color-backround !important;
-    
 
-         h3 {
-         	@include cardsTexto;
-         	font-size: 120%;
+        h3 {
+            @include cardsTexto;
+            font-size: 120%;
         }
 
-         h2 {
-         	@include cardsTexto; 
-         	font-size: 150%;
+        h2 {
+            @include cardsTexto;
+            font-size: 150%;
         }
 
-         p {
-             @include cardsTexto;
+        p {
+            @include cardsTexto;
         }
     }
 }
@@ -171,10 +178,8 @@ $font:'Roboto', sans-serif;
 
 #libros {
     margin-bottom: 80px;
-    margin-top: 70px;
 
-
-     h3 {
+    h3 {
         @include titulos;
     }
 }
@@ -191,22 +196,22 @@ $font:'Roboto', sans-serif;
 
 
     li {
-    padding: 20px;
-    list-style-position: outside;
-    text-align: justify;
-    animation: aparecer 1s ease-in-out;
+        padding: 20px;
+        list-style-position: outside;
+        text-align: justify;
+        animation: aparecer 1s ease-in-out;
     }
 
     p {
-    color: #444242;
-    font-family: $font;
+        color: #444242;
+        font-family: $font;
 
     }
 
     h3 {
-    @include titulos;
-    margin-left: 60px;
-    animation: aparecer 1s ease-in-out;
+        @include titulos;
+        margin-left: 60px;
+        animation: aparecer 1s ease-in-out;
     }
 }
 
@@ -226,27 +231,31 @@ $font:'Roboto', sans-serif;
     }
 }
 
-.contactoForm select:focus, input:focus, input[type]:focus {
+.contactoForm select:focus,
+input:focus,
+input[type]:focus {
     border-color: #6d8c9a;
     box-shadow: 0 1px 1px #6d8c9a inset, 0 0 8px #6d8c9a;
     outline: 0 none;
 }
 
 .contactoForm button {
-        background-color: #6d8c9a;
-        border-color: #6d8c9a;
-        color: #FFF;
-        margin-left: 10px;
-        justify-content: center;
-         margin-bottom: 20px;
+    background-color: #6d8c9a;
+    border-color: #6d8c9a;
+    color: #FFF;
+    margin-left: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 
-.contactoForm button:focus, button:active, button:hover {
-        background-color: #90bccf;
-        border-color: #90bccf;
-        box-shadow: 0 1px 1px #6d8c9a inset, 0 0 8px #6d8c9a;
-        color: #FFF !important;
+.contactoForm button:focus,
+button:active,
+button:hover {
+    background-color: #90bccf;
+    border-color: #90bccf;
+    box-shadow: 0 1px 1px #6d8c9a inset, 0 0 8px #6d8c9a;
+    color: #FFF !important;
 }
 
 
@@ -264,7 +273,7 @@ footer {
 .anchoFooter {
     margin-top: 10px;
 
-     p {
+    p {
         font-family: 'Raleway', sans-serif;
         color: #fff;
         padding-left: 30px;
@@ -287,9 +296,11 @@ footer {
     transition: 1s all;
     z-index: 10000;
 }
+
 .simplescrollup__button--show {
     transform: translateX(0);
 }
+
 .simplescrollup__button--hide {
     transform: translateX(100px);
 }
@@ -318,12 +329,12 @@ footer {
         padding: 0px 20px 0px 20px;
     }
 
-     #banner{
-	    .banner__texto {
-	        margin: 0 auto 80px auto;
-	        text-align: center;
-	        margin-top: 10px;
-	    }
+    #banner {
+        .banner__texto {
+            margin: 0 auto 80px auto;
+            text-align: center;
+            margin-top: 10px;
+        }
     }
 }
 
@@ -332,17 +343,17 @@ footer {
         margin-right: 10px;
     }
 
-    #banner{
-	      .banner__texto {
-	        margin: 0 auto 80px auto;
-	        text-align: center;
-	        margin-top: 10px;
-	    }
+    #banner {
+        .banner__texto {
+            margin: 0 auto 80px auto;
+            text-align: center;
+            margin-top: 10px;
+        }
     }
 
 
     #inicio {
-        padding-top: 30px; 
+        padding-top: 30px;
     }
 
     .banner__texto {
@@ -355,11 +366,3 @@ footer {
         }
     }
 }
-
-
-
-
-
-    
- 
-
