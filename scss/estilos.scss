@@ -1,22 +1,35 @@
 // ESTILOS GENERALES
 
-$color-titulos: #8A413F;
+$color-titulos: #aa5b59;
 
 $color-backround:#6d8c9a;
+$color-backround-lighter:#90bccf;
+$color-pink:#f3e4df;
 
 $font:'Roboto',
 sans-serif;
 
 @mixin titulos {
     color: $color-titulos;
-    font-family: $font, sans-serif;
+    font-family: $font, sans-serif; 
     line-height: 2;
 }
 
 @mixin cardsTexto {
     color: #fff;
-    text-align: center;
     font-family: $font;
+}
+
+@mixin arrow_icon() {
+    background-image: url("../imagenes/angle-down-solid.svg");
+    background-size: cover;
+    border: none
+}
+
+.down-arrow {
+    @include arrow_icon();
+    width: 20px;
+    height: 20px;
 }
 
 .titulo {
@@ -33,29 +46,31 @@ sans-serif;
 }
 
 // ESTO ES EL MENU
-.menu {
-    background-color: $color-backround;
-    min-height: 50px;
 
+.menu {
+
+    background-color: $color-backround;
+
+   
     .navbar-brand:hover {
         filter: opacity(.5);
     }
 
+
+    
     .nav-link {
         color: #fff !important;
-        padding: 15px !important;
+        padding: 4px !important;
+        margin:10px;
         font-size: 13px;
         text-decoration: none;
         text-transform: uppercase;
         font-weight: 600;
         letter-spacing: 1px;
-        padding: 20px;
-
-        &:hover {
-            color: #90bccf !important;
-        }
-
+        padding: 15x; 
+      
     }
+ 
 
     .navbar-toggler-icon {
         background-color: none;
@@ -67,22 +82,47 @@ sans-serif;
     }
 }
 
+
+a.middle {
+    position: relative;
+}
+
+a.middle:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFF;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+a.middle:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
 .menu-abv {
     background-color: transparent;
 }
 
 .menu-blw {
     background-color: $color-backround;
+    opacity: 95%;
 }
+
 
 
 // BANNER
 
 #banner {
-    background-image: url(../imagenes/mujerlectora6.jpg);
+    background-image: url(../imagenes/mujerlectora10.jpg);
     background-size: cover;
-    padding-top: 40px;
-    min-height: 350px;
+    padding-top: 150px;
+    min-height: 680px;
     color: #fff;
     animation: aparecer 1s ease-in-out;
 
@@ -90,18 +130,21 @@ sans-serif;
     .banner__texto {
         margin: 0 auto 80px auto;
         text-align: center;
-        margin-top: 60px;
+        margin-top: 80px;
+
 
         strong {
             font-size: 300%;
 
         }
+
+        h6 {
+            margin-bottom:30px;
+         }    
     }
 }
 
-.section-beacon {
-    height: 71px;
-}
+
 
 // INICIO
 
@@ -161,17 +204,176 @@ sans-serif;
         h3 {
             @include cardsTexto;
             font-size: 120%;
+            text-align: center;
         }
 
         h2 {
             @include cardsTexto;
             font-size: 150%;
+            text-align: center;
         }
 
         p {
             @include cardsTexto;
+            text-align: center;
         }
     }
+}
+
+
+.dashboard-cards {
+    position: relative;
+    margin: 0 !important;
+}
+
+.dashboard-cards .card {
+    background: #ffffff;
+    display: inline-block;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+    padding: 0 !important;
+    margin: 5px 5px 10px 5px;
+    text-align: left;
+    -webkit-transition: all 0.3s 0s ease-in;
+    transition: all 0.3s 0s ease-in;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    @include cardsTexto;
+}
+
+.dashboard-cards .card:hover {
+    box-shadow: 0 15px 10px -10px rgba(31, 31, 31, 0.5);
+    transition: all 0.3s ease;
+}
+
+.dashboard-cards .card .card-title {
+    background: #ffffff;
+    padding: 20px 32px;
+    margin-bottom: 0px;
+    position: relative;
+    z-index: 0;
+}
+
+.dashboard-cards .card .card-title h2 {
+    font-size: 24px;
+    letter-spacing: -0.05em;
+    margin: 0;
+    padding: 0;
+    @include cardsTexto;
+}
+
+.dashboard-cards .card .card-title h2 small {
+    display: block;
+    font-size: 14px;
+    margin-top: 8px;
+    letter-spacing: -0.025em;
+    @include cardsTexto;
+}
+
+.dashboard-cards .card .card-description {
+    position: relative;
+    font-size: 14px;
+    border-top: 0px solid #ddd;
+    padding: 10px 15px 0 15px;
+    @include cardsTexto;
+}
+
+.dashboard-cards .card .card-actions {
+    padding-bottom: 8px;
+
+}
+
+.dashboard-cards .card .card-flap {
+    background: #d9d9d9;
+    position: absolute;
+    width: 100%;
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+}
+
+.dashboard-cards .card .flap1 {
+    -webkit-transition: all 0.3s 0.3s ease-out;
+    transition: all 0.3s 0.3s ease-out;
+    z-index: -1;
+}
+
+.dashboard-cards .card .flap2 {
+    -webkit-transition: all 0.3s 0s ease-out;
+    transition: all 0.3s 0s ease-out;
+    z-index: -2;
+}
+
+.dashboard-cards.showing .card {
+    cursor: pointer;
+    opacity: 0.6;
+    -webkit-transform: scale(0.88);
+    transform: scale(0.88);
+}
+
+.dashboard-cards .no-touch .dashboard-cards.showing .card:hover {
+    opacity: 0.94;
+    -webkit-transform: scale(0.92);
+    transform: scale(0.92);
+}
+
+.dashboard-cards .card.d-card-show {
+    opacity: 1 !important;
+    -webkit-transform: scale(1) !important;
+    transform: scale(1) !important;
+}
+
+.dashboard-cards .card.d-card-show .card-flap {
+    background: $color-backround;
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+}
+
+.dashboard-cards .card.d-card-show .flap1 {
+    -webkit-transition: all 0.3s 0s ease-out;
+    transition: all 0.3s 0s ease-out;
+}
+
+.dashboard-cards .card.d-card-show .flap2 {
+    -webkit-transition: all 0.3s 0.2s ease-out;
+    transition: all 0.3s 0.2s ease-out;
+}
+
+// Lista de las cards
+.dashboard-cards .task-list {
+    padding: 0 !important;
+}
+
+.dashboard-cards .task-list li {
+    padding: 10px 0;
+    padding-left: 10px;
+    margin: 3px 0;
+    list-style-type: none;
+    border-bottom: 1px solid #e9ebed;
+    transition: all .2s ease;
+    color: #fff;
+}
+
+.dashboard-cards .task-list li span {
+    float: right;
+    margin-right: 5px;
+}
+
+.dashboard-cards .card-actions .btn {
+    color: #fff;
+    display: block;
+}
+
+.dashboard-cards .card-actions .btn:hover {
+    color: $color-backround-lighter;
+}
+
+.arrow {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 // LIBROS
@@ -184,8 +386,16 @@ sans-serif;
     }
 }
 
+.section-beacon {
+    height: 85px;
+}
+
 #carousel-libros {
     margin-left: 25px;
+}
+
+#mobile{
+    display: none;
 }
 
 // FAQ
@@ -215,7 +425,7 @@ sans-serif;
     }
 }
 
-// SUSCRIPCIÓN
+// FORMULARIO
 
 #contacto {
 
@@ -271,44 +481,68 @@ footer {
 }
 
 .anchoFooter {
-    margin-top: 10px;
+    margin-top:30px;
 
-    p {
+    .redes{
+
+        display:inline-block;
+
+        .fa-facebook-f {
+        text-align: center;
+        margin-left: 5px;
+        margin-right: 5px;
+        color:#fff;
+             &:hover {
+                color: #3b5998;
+            }
+        }
+
+
+        .fa-whatsapp {
+        text-align: center;
+        margin-left: 5px;
+        margin-right: 5px;
+         color:#fff;
+              &:hover {
+                color: #25D366;
+            }
+        }
+
+       .fa-instagram {
+        text-align: center;
+        margin-left: 5px;
+        margin-right: 5px;
+         color:#fff;
+          &:hover {
+                color:#8a3ab9;
+            }
+        }       
+    }
+
+    .firmaFooter {
         font-family: 'Raleway', sans-serif;
         color: #fff;
-        padding-left: 30px;
-        font-size: 75%;
+        padding-right:50px;
+        font-size:80%;
         line-height: 2;
+        margin-bottom: 10px;
     }
 
-    a:hover {
-        filter: opacity(.5);
-    }
+
 }
-
-
-// BOTON UP
-
-.simplescrollup__button {
-    position: fixed;
-    bottom: 3rem;
-    right: 3rem;
-    transition: 1s all;
-    z-index: 10000;
-}
-
-.simplescrollup__button--show {
-    transform: translateX(0);
-}
-
-.simplescrollup__button--hide {
-    transform: translateX(100px);
-}
-
 
 // /MEDIA QUERIES
 
 @media (max-width: 375px) {
+
+    .menu-abv {
+        background-color: $color-backround;
+    }
+
+    .menu-blw {
+        background-color: $color-backround;
+    }
+
     .navbar-toggler {
         margin-right: 0px;
     }
@@ -321,48 +555,117 @@ footer {
         padding: 30px 20px 0px 20px;
     }
 
-    #libros {
-        padding: 30px 20px 0px 20px;
+    #desktop {
+        display: none;
     }
 
-    #carousel-libros {
-        padding: 0px 20px 0px 20px;
+    #mobile{
+        display: block;
     }
+
+
 
     #banner {
+
+        background-image: url(../imagenes/mujerlectora6.jpg);
+        background-size: cover;
+        padding-top: 25px;
+        min-height: 380px;
+        color: #fff;
+        animation: aparecer 1s ease-in-out;
+
         .banner__texto {
-            margin: 0 auto 80px auto;
+            margin: 0 auto 40px auto;
             text-align: center;
-            margin-top: 10px;
+            margin-top: 70px;
         }
+
+        strong {
+            font-size: 100%;
+        }
+
+        img {
+            visibility: hidden;
+        }
+
+         #libros {
+            padding-top: 0px;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+        .section-beacon {
+        height: 10px;
+        }
+
+
+
     }
+
+
 }
 
 @media (min-width: 376px) and (max-width: 575.98px) {
+    .menu-abv {
+        background-color: $color-backround;
+    }
+
     .navbar-toggler {
         margin-right: 10px;
     }
 
-    #banner {
-        .banner__texto {
-            margin: 0 auto 80px auto;
-            text-align: center;
-            margin-top: 10px;
-        }
-    }
-
-
     #inicio {
-        padding-top: 30px;
+        padding: 20px;
+         margin-top: 20px;
     }
 
-    .banner__texto {
-        margin: 0 auto 80px auto;
-        text-align: center;
 
-        h1 {
-            font-size: 300%;
-            margin-top: 30px;
+    .section-beacon {
+    height: 10px;
+    }
+
+     #desktop {
+        display: none;
+    }
+
+    #libros {
+        padding-top: 0px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    
+    #mobile{
+        display: block;
+    }
+      
+
+    #banner {
+
+        background-image: url(../imagenes/mujerlectora6.jpg);
+        background-size: cover;
+        padding-top: 25px;
+        min-height: 400px;
+        color: #fff;
+        animation: aparecer 1s ease-in-out;
+
+        .banner__texto {
+            margin: 80px 20px 40px 20px;
+            text-align: center;
+
+                strong {
+                    font-size: 250%;
+                }
+
+                h1 {
+                    font-size: 300%;
+                    margin-top: 30px;
+                }
+
+
+                img {
+                    visibility: hidden;
+                }
+            }
         }
-    }
 }

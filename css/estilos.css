@@ -1,5 +1,12 @@
+.down-arrow {
+  background-image: url("../imagenes/angle-down-solid.svg");
+  background-size: cover;
+  border: none;
+  width: 20px;
+  height: 20px; }
+
 .titulo {
-  color: #8A413F;
+  color: #aa5b59;
   font-family: "Roboto", sans-serif, sans-serif;
   line-height: 2;
   font-size: 170%; }
@@ -11,49 +18,66 @@
   line-height: 1.5; }
 
 .menu {
-  background-color: #6d8c9a;
-  min-height: 50px; }
+  background-color: #6d8c9a; }
   .menu .navbar-brand:hover {
     filter: opacity(0.5); }
   .menu .nav-link {
     color: #fff !important;
-    padding: 15px !important;
+    padding: 4px !important;
+    margin: 10px;
     font-size: 13px;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1px;
-    padding: 20px; }
-    .menu .nav-link:hover {
-      color: #90bccf !important; }
+    padding: 15x; }
   .menu .navbar-toggler-icon {
     background-color: none; }
     .menu .navbar-toggler-icon .navbar-toggler {
       border: none;
       margin-right: 30px; }
 
+a.middle {
+  position: relative; }
+
+a.middle:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFF;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out; }
+
+a.middle:hover:before {
+  visibility: visible;
+  transform: scaleX(1); }
+
 .menu-abv {
   background-color: transparent; }
 
 .menu-blw {
-  background-color: #6d8c9a; }
+  background-color: #6d8c9a;
+  opacity: 95%; }
 
 #banner {
-  background-image: url(../imagenes/mujerlectora6.jpg);
+  background-image: url(../imagenes/mujerlectora10.jpg);
   background-size: cover;
-  padding-top: 40px;
-  min-height: 350px;
+  padding-top: 150px;
+  min-height: 680px;
   color: #fff;
   animation: aparecer 1s ease-in-out; }
   #banner .banner__texto {
     margin: 0 auto 80px auto;
     text-align: center;
-    margin-top: 60px; }
+    margin-top: 80px; }
     #banner .banner__texto strong {
       font-size: 300%; }
-
-.section-beacon {
-  height: 71px; }
+    #banner .banner__texto h6 {
+      margin-bottom: 30px; }
 
 #inicio {
   padding-top: 80px;
@@ -86,28 +110,168 @@
     background-color: #6d8c9a !important; }
     #servicios .card-body h3 {
       color: #fff;
-      text-align: center;
       font-family: "Roboto", sans-serif;
-      font-size: 120%; }
+      font-size: 120%;
+      text-align: center; }
     #servicios .card-body h2 {
       color: #fff;
-      text-align: center;
       font-family: "Roboto", sans-serif;
-      font-size: 150%; }
+      font-size: 150%;
+      text-align: center; }
     #servicios .card-body p {
       color: #fff;
-      text-align: center;
-      font-family: "Roboto", sans-serif; }
+      font-family: "Roboto", sans-serif;
+      text-align: center; }
+
+.dashboard-cards {
+  position: relative;
+  margin: 0 !important; }
+
+.dashboard-cards .card {
+  background: #ffffff;
+  display: inline-block;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  padding: 0 !important;
+  margin: 5px 5px 10px 5px;
+  text-align: left;
+  -webkit-transition: all 0.3s 0s ease-in;
+  transition: all 0.3s 0s ease-in;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+  font-family: "Roboto", sans-serif; }
+
+.dashboard-cards .card:hover {
+  box-shadow: 0 15px 10px -10px rgba(31, 31, 31, 0.5);
+  transition: all 0.3s ease; }
+
+.dashboard-cards .card .card-title {
+  background: #ffffff;
+  padding: 20px 32px;
+  margin-bottom: 0px;
+  position: relative;
+  z-index: 0; }
+
+.dashboard-cards .card .card-title h2 {
+  font-size: 24px;
+  letter-spacing: -0.05em;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: "Roboto", sans-serif; }
+
+.dashboard-cards .card .card-title h2 small {
+  display: block;
+  font-size: 14px;
+  margin-top: 8px;
+  letter-spacing: -0.025em;
+  color: #fff;
+  font-family: "Roboto", sans-serif; }
+
+.dashboard-cards .card .card-description {
+  position: relative;
+  font-size: 14px;
+  border-top: 0px solid #ddd;
+  padding: 10px 15px 0 15px;
+  color: #fff;
+  font-family: "Roboto", sans-serif; }
+
+.dashboard-cards .card .card-actions {
+  padding-bottom: 8px; }
+
+.dashboard-cards .card .card-flap {
+  background: #d9d9d9;
+  position: absolute;
+  width: 100%;
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg); }
+
+.dashboard-cards .card .flap1 {
+  -webkit-transition: all 0.3s 0.3s ease-out;
+  transition: all 0.3s 0.3s ease-out;
+  z-index: -1; }
+
+.dashboard-cards .card .flap2 {
+  -webkit-transition: all 0.3s 0s ease-out;
+  transition: all 0.3s 0s ease-out;
+  z-index: -2; }
+
+.dashboard-cards.showing .card {
+  cursor: pointer;
+  opacity: 0.6;
+  -webkit-transform: scale(0.88);
+  transform: scale(0.88); }
+
+.dashboard-cards .no-touch .dashboard-cards.showing .card:hover {
+  opacity: 0.94;
+  -webkit-transform: scale(0.92);
+  transform: scale(0.92); }
+
+.dashboard-cards .card.d-card-show {
+  opacity: 1 !important;
+  -webkit-transform: scale(1) !important;
+  transform: scale(1) !important; }
+
+.dashboard-cards .card.d-card-show .card-flap {
+  background: #6d8c9a;
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg); }
+
+.dashboard-cards .card.d-card-show .flap1 {
+  -webkit-transition: all 0.3s 0s ease-out;
+  transition: all 0.3s 0s ease-out; }
+
+.dashboard-cards .card.d-card-show .flap2 {
+  -webkit-transition: all 0.3s 0.2s ease-out;
+  transition: all 0.3s 0.2s ease-out; }
+
+.dashboard-cards .task-list {
+  padding: 0 !important; }
+
+.dashboard-cards .task-list li {
+  padding: 10px 0;
+  padding-left: 10px;
+  margin: 3px 0;
+  list-style-type: none;
+  border-bottom: 1px solid #e9ebed;
+  transition: all .2s ease;
+  color: #fff; }
+
+.dashboard-cards .task-list li span {
+  float: right;
+  margin-right: 5px; }
+
+.dashboard-cards .card-actions .btn {
+  color: #fff;
+  display: block; }
+
+.dashboard-cards .card-actions .btn:hover {
+  color: #90bccf; }
+
+.arrow {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
 
 #libros {
   margin-bottom: 80px; }
   #libros h3 {
-    color: #8A413F;
+    color: #aa5b59;
     font-family: "Roboto", sans-serif, sans-serif;
     line-height: 2; }
 
+.section-beacon {
+  height: 85px; }
+
 #carousel-libros {
   margin-left: 25px; }
+
+#mobile {
+  display: none; }
 
 .faq {
   background-image: url(../imagenes/mujerlectora2.jpg);
@@ -121,7 +285,7 @@
     color: #444242;
     font-family: "Roboto", sans-serif; }
   .faq h3 {
-    color: #8A413F;
+    color: #aa5b59;
     font-family: "Roboto", sans-serif, sans-serif;
     line-height: 2;
     margin-left: 60px;
@@ -169,57 +333,107 @@ footer {
   justify-content: center; }
 
 .anchoFooter {
-  margin-top: 10px; }
-  .anchoFooter p {
+  margin-top: 30px; }
+  .anchoFooter .redes {
+    display: inline-block; }
+    .anchoFooter .redes .fa-facebook-f {
+      text-align: center;
+      margin-left: 5px;
+      margin-right: 5px;
+      color: #fff; }
+      .anchoFooter .redes .fa-facebook-f:hover {
+        color: #3b5998; }
+    .anchoFooter .redes .fa-whatsapp {
+      text-align: center;
+      margin-left: 5px;
+      margin-right: 5px;
+      color: #fff; }
+      .anchoFooter .redes .fa-whatsapp:hover {
+        color: #25D366; }
+    .anchoFooter .redes .fa-instagram {
+      text-align: center;
+      margin-left: 5px;
+      margin-right: 5px;
+      color: #fff; }
+      .anchoFooter .redes .fa-instagram:hover {
+        color: #8a3ab9; }
+  .anchoFooter .firmaFooter {
     font-family: 'Raleway', sans-serif;
     color: #fff;
-    padding-left: 30px;
-    font-size: 75%;
-    line-height: 2; }
-  .anchoFooter a:hover {
-    filter: opacity(0.5); }
-
-.simplescrollup__button {
-  position: fixed;
-  bottom: 3rem;
-  right: 3rem;
-  transition: 1s all;
-  z-index: 10000; }
-
-.simplescrollup__button--show {
-  transform: translateX(0); }
-
-.simplescrollup__button--hide {
-  transform: translateX(100px); }
+    padding-right: 50px;
+    font-size: 80%;
+    line-height: 2;
+    margin-bottom: 10px; }
 
 @media (max-width: 375px) {
+  .menu-abv {
+    background-color: #6d8c9a; }
+  .menu-blw {
+    background-color: #6d8c9a; }
   .navbar-toggler {
     margin-right: 0px; }
   .navbar-brand {
     margin-right: 0px; }
   #inicio {
     padding: 30px 20px 0px 20px; }
-  #libros {
-    padding: 30px 20px 0px 20px; }
-  #carousel-libros {
-    padding: 0px 20px 0px 20px; }
-  #banner .banner__texto {
-    margin: 0 auto 80px auto;
-    text-align: center;
-    margin-top: 10px; } }
+  #desktop {
+    display: none; }
+  #mobile {
+    display: block; }
+  #banner {
+    background-image: url(../imagenes/mujerlectora6.jpg);
+    background-size: cover;
+    padding-top: 25px;
+    min-height: 380px;
+    color: #fff;
+    animation: aparecer 1s ease-in-out; }
+    #banner .banner__texto {
+      margin: 0 auto 40px auto;
+      text-align: center;
+      margin-top: 70px; }
+    #banner strong {
+      font-size: 100%; }
+    #banner img {
+      visibility: hidden; }
+    #banner #libros {
+      padding-top: 0px;
+      padding-right: 10px;
+      padding-left: 10px; }
+    #banner .section-beacon {
+      height: 10px; } }
 
 @media (min-width: 376px) and (max-width: 575.98px) {
+  .menu-abv {
+    background-color: #6d8c9a; }
   .navbar-toggler {
     margin-right: 10px; }
-  #banner .banner__texto {
-    margin: 0 auto 80px auto;
-    text-align: center;
-    margin-top: 10px; }
   #inicio {
-    padding-top: 30px; }
-  .banner__texto {
-    margin: 0 auto 80px auto;
-    text-align: center; }
-    .banner__texto h1 {
-      font-size: 300%;
-      margin-top: 30px; } }
+    padding: 20px;
+    margin-top: 20px; }
+  .section-beacon {
+    height: 10px; }
+  #desktop {
+    display: none; }
+  #libros {
+    padding-top: 0px;
+    padding-right: 20px;
+    padding-left: 20px; }
+  #mobile {
+    display: block; }
+  #banner {
+    background-image: url(../imagenes/mujerlectora6.jpg);
+    background-size: cover;
+    padding-top: 25px;
+    min-height: 400px;
+    color: #fff;
+    animation: aparecer 1s ease-in-out; }
+    #banner .banner__texto {
+      margin: 80px 20px 40px 20px;
+      text-align: center; }
+      #banner .banner__texto strong {
+        font-size: 250%; }
+      #banner .banner__texto h1 {
+        font-size: 300%;
+        margin-top: 30px; }
+      #banner .banner__texto img {
+        visibility: hidden; } }
