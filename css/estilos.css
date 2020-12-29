@@ -265,13 +265,19 @@ a.middle:hover:before {
     line-height: 2; }
 
 .section-beacon {
-  height: 85px; }
+  height: 85px;
+  width: 290px; }
 
 #carousel-libros {
   margin-left: 25px; }
 
 #mobile {
   display: none; }
+  #mobile #carousel-libros {
+    margin-left: 15px; }
+  #mobile .carousel-control-prev,
+  #mobile .carousel-control-next {
+    display: none; }
 
 .faq {
   background-image: url(../imagenes/mujerlectora2.jpg);
@@ -380,6 +386,8 @@ footer {
     display: none; }
   #mobile {
     display: block; }
+  #libros {
+    padding: 0px 20px 0px 20px; }
   #banner {
     background-image: url(../imagenes/mujerlectora6.jpg);
     background-size: cover;
@@ -394,13 +402,7 @@ footer {
     #banner strong {
       font-size: 100%; }
     #banner img {
-      visibility: hidden; }
-    #banner #libros {
-      padding-top: 0px;
-      padding-right: 10px;
-      padding-left: 10px; }
-    #banner .section-beacon {
-      height: 10px; } }
+      visibility: hidden; } }
 
 @media (min-width: 376px) and (max-width: 575.98px) {
   .menu-abv {
@@ -410,8 +412,6 @@ footer {
   #inicio {
     padding: 20px;
     margin-top: 20px; }
-  .section-beacon {
-    height: 10px; }
   #desktop {
     display: none; }
   #libros {
